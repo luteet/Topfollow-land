@@ -1,0 +1,18 @@
+@import 'mixin';
+@import 'null';
+@import 'libs';
+@import 'vars';
+@import 'global';
+@import 'font';
+
+@import 'main-sections/header';
+
+
+@import 'pages/main-page/app';
+@import 'pages/main-page/advantages';
+@import 'pages/main-page/how-to-use';
+@import 'pages/main-page/faq';
+@import 'pages/main-page/reviews';
+
+
+@import 'main-sections/footer';

@@ -1,0 +1,47 @@
+
+
+$containerPadding: 15;
+
+$container: 1170 + ($containerPadding * 2);
+$containerMin: 1280 + ($containerPadding * 2);
+$containerLarge: 1600 + ($containerPadding * 2);
+
+:root {
+    --title-font: 'EuclidCircularA', sans-serif;
+    --main-font: 'EuclidCircularA', sans-serif;
+    
+    --accent: #ED017F;
+    --accent-2: #7D33BA;
+    --accent-2-dark: #66229e;
+
+    --dark: #313336;
+    --light: #E5E5E5;
+    --light-2: #d8d8d8;
+    --light-3: #bdbdbd;
+
+    --white: #FFF;
+    --black: #000;
+    --gray: #666059;
+
+    --container-padding: 15px;
+}
+
+@font-face {
+    @include font-include('EuclidCircularA', 300, swap, normal, 'EuclidCircularA-Light');
+}
+
+@font-face {
+    @include font-include('EuclidCircularA', 400, swap, normal, 'EuclidCircularA-Regular');
+}
+
+@font-face {
+    @include font-include('EuclidCircularA', 500, swap, normal, 'EuclidCircularA-Medium');
+}
+
+@font-face {
+    @include font-include('EuclidCircularA', 600, swap, normal, 'EuclidCircularA-SemiBold');
+}
+
+@font-face {
+    @include font-include('EuclidCircularA', 700, swap, normal, 'EuclidCircularA-Bold');
+}

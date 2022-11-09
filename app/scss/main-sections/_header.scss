@@ -1,0 +1,384 @@
+.header {
+    position: sticky;
+    left: 0; top: 0;
+    width: 100%;
+
+    //padding-right: var(--popup-padding) !important;
+
+    //transform: translate(0, var(--pos));
+
+    //transition: transform .2s ease-in-out;
+
+    padding: 5px 0;
+    background: var(--white);
+    border-bottom: 3px solid var(--light);
+
+    @include _992 {
+        padding: 10px 0;
+    }
+
+    z-index: 99;
+
+    &__logo {
+        position: relative;
+        z-index: 4;
+        max-width: 100px;
+        @include _992 {
+            max-width: none;
+        }
+        &--img {
+            width: 100%; height: 28px;
+            @include _992 {
+                height: initial;
+            }
+            object-fit: contain;
+        }
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__lang {
+        margin-right: 15px;
+        @include _992 {
+            margin-right: 0;
+        }
+
+        position: relative;
+
+        &--target {
+            background: transparent;
+
+            display: flex;
+            align-items: center;
+
+            padding: 10px 0;
+
+            & img {
+                margin-right: 9px;
+                border-radius: 2px;
+            }
+
+            & > svg {
+                margin-left: 5px;
+
+                transition: transform .2s ease-in-out;
+            }
+
+            &._active svg {
+                transform: scale(-1);
+            }
+        }
+
+        &--list {
+            position: absolute;
+            right: 0; top: 100%;
+            width: calc(100% + 30px);
+
+            background: var(--white);
+            box-shadow: 0 5px 15px -5px rgba(0,0,0,0.2);
+
+            border-radius: 8px;
+            padding: 5px 0;
+
+            transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+            opacity: 0; visibility: hidden;
+            
+            & > li > a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                line-height: 100%;
+                color: var(--dark);
+
+                padding: 7px 10px;
+                margin: 5px 0;
+
+                & > * {
+                    flex: 0 1 50%;
+                    &:first-child {
+                        text-align: right;
+                    }
+                }
+
+                transition: background .2s ease-in-out;
+
+                &:hover {
+                    background: var(--light);
+                }
+
+                &:active {
+                    background: var(--light-2);
+                }
+
+                & img {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        &--target._active + &--list {
+            opacity: 1; visibility: visible;
+        }
+
+        &._hover &--target svg {
+            transform: scale(-1);
+        }
+
+        &._hover &--list {
+            opacity: 1; visibility: visible;
+        }
+    }
+
+    &__follower-or-like {
+        @include _992 {
+            flex: 0 1 auto;
+        }
+        flex: 1 1 auto;
+
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__btn {
+        display: inline-block;
+        text-align: center;
+        padding: 10px 15px;
+
+        background: var(--accent);
+        color: var(--white);
+
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 100%;
+
+        @include _992 {
+            font-size: 0.9375rem;
+            padding: 17px 23px;
+
+            margin-right: 30px;
+        }
+
+        margin-right: 15px;
+
+        border-radius: 6px;
+
+        transition: background .2s ease-in-out;
+
+        &:hover {
+            background: var(--accent-2);
+        }
+
+        &:active {
+            background: var(--accent-2-dark);
+        }
+        
+    }
+
+    &__nav {
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; height: 100vh;
+
+        background: var(--white);
+
+        overflow: auto;
+
+        opacity: 0; visibility: hidden;
+        z-index: 3;
+
+        &._active {
+            opacity: 1; visibility: visible;
+        }
+
+        &::before {
+            content: '';
+            position: fixed;
+            left: 0; top: 0;
+            width: 100%; height: 60px;
+            background: var(--white);
+            z-index: 4;
+        }
+
+        transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+
+        @include _992 {
+            position: static;
+            width: auto; height: auto;
+            background-color: transparent;
+            padding: 0;
+            overflow: visible;
+
+            opacity: 1; visibility: visible;
+
+            flex: 1 1 auto;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &--body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            min-height: 100%;
+
+            padding: 60px 0 30px 0;
+
+            @include _992 {
+                padding: 0;
+                display: block;
+            }
+        }
+
+        &--list {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            flex: 1 1 auto;
+
+            height: 100%;
+
+            @include _992 {
+                align-items: stretch;
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        &--list > li {
+            width: 100%;
+            text-align: center;
+            
+            @include _992 {
+                width: auto;
+            }
+
+        }
+
+        &--list > li > a {
+            width: 100%;
+
+            display: block;
+            text-align: center;
+
+            padding: 10px 20px;
+
+            font-weight: 300;
+            line-height: 100%;
+            color: var(--dark);
+
+            transition: color .2s ease-in-out;
+
+            &:hover {
+                color: var(--accent);
+            }
+
+            &:active {
+                color: var(--accent-2);
+            }
+
+            @include _992 {
+                width: auto;
+            }
+
+        }
+
+        &--lang {
+            max-width: 200px;
+            margin-right: 0; margin-top: 15px;
+            /* margin: 0 auto; */
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & .header__lang--list {
+                right: auto; left: 50%;
+                top: auto; bottom: 100%;
+                transform: translate(-50%,0);
+            }
+        }
+
+        &--btn {
+            margin-top: 15px;
+            margin-right: 0;
+        }
+    }
+    
+    &__burger {
+        position: relative;
+    
+        width: 35px; height: 35px;
+    
+        background: var(--accent);
+        overflow: hidden;
+    
+        z-index: 10;
+    
+        cursor: pointer;
+    
+        display: inline-block;
+        @include _992 {
+            display: none;
+        }
+
+        transition: background .2s ease-in-out;
+        border-radius: 6px;
+
+        &:hover {
+            background: var(--accent-2);
+        }
+
+        &:active {
+            background: var(--accent-2-dark);
+        }
+    
+        & span {
+            position: absolute;
+            left: 50%;
+    
+            width: 50%; height: 2px;
+            background: var(--white);
+            transition: transform .2s ease-in-out, top .2s ease-in-out, opacity .2s ease-in-out;
+    
+            &:nth-child(1) {
+                transform: translate(-50%,-7px);
+            }
+
+            &:nth-child(2) {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+
+            &:nth-child(3) {
+                transform: translate(-50%, 5px);
+            }
+        }
+
+        &._active span {
+            &:nth-child(1) {
+                transform: translate(-55%, -50%) rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: translate(-55%, -50%) rotate(-45deg);
+            }
+    
+        }
+    }
+}

@@ -1,0 +1,68 @@
+
+.main-title {
+    font-family: var(--title-font);
+    font-weight: 700;
+    line-height: 97%;
+
+    margin: 0;
+
+    font-size: 1.875rem;
+
+    @include _768 {
+        font-size: 3rem;
+    }
+
+    @include _992 {
+        font-size: 3.625rem;
+    }
+
+    & mark {
+        background: transparent;
+        color: var(--accent-2);
+    }
+}
+
+.title {
+    
+    font-family: var(--title-font);
+    font-weight: 700;
+
+    line-height: 110%;
+    font-size: 1.5rem;
+
+    padding-top: 10px;
+
+    @include _768 {
+        font-size: 2rem;
+    }
+
+    @include _992 {
+        font-size: 3rem;
+    }
+
+    &._light {
+        color: var(--white);
+    }
+}
+
+.section-title {
+
+    font-family: var(--title-font);
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    
+    @include _992 {
+        font-size: 1.25rem;
+    }
+
+    &._light {
+        color: var(--white);
+    }
+
+}
+
+.txt-center {
+    text-align: center;
+}
