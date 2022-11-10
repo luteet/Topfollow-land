@@ -292,10 +292,6 @@ let reviewsCustomersSlider = new Swiper('.reviews-customers__slider', {
   }
 }); 
 
-reviewsCustomersSlider.on('slideChangeTransitionEnd', function (event) {
-  console.log(event.slides);
-});
-
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
