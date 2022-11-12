@@ -10,12 +10,16 @@ progress,sub,sup {
     vertical-align: baseline
 }
 
-*,.swiper-lazy-preloader,:after,:before,[type=checkbox],[type=radio],legend {
+*,:after,:before,[type=checkbox],[type=radio],legend {
     box-sizing: border-box
 }
 
 .swiper,ul li {
     list-style: none
+}
+
+.bg-img,.decor-img {
+    -ms-user-select: none
 }
 
 * {
@@ -253,6 +257,10 @@ summary {
     box-sizing: content-box
 }
 
+.swiper-button-lock,.swiper-pagination-lock,.swiper-scrollbar-lock {
+    display: none
+}
+
 .swiper-android .swiper-slide,.swiper-wrapper {
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0)
@@ -376,6 +384,10 @@ summary {
     width: var(--swiper-centered-offset-after)
 }
 
+.wrapper,body,html {
+    min-height: 100%
+}
+
 .swiper-centered.swiper-vertical>.swiper-wrapper>.swiper-slide:first-child {
     -webkit-margin-before: var(--swiper-centered-offset-before);
     margin-block-start: var(--swiper-centered-offset-before)
@@ -474,10 +486,6 @@ summary {
 
 .header__nav::before,.how-to-use__item--image::before,.reviews__slide--body::before,.reviews__slide--preview::after,.reviews__slide--preview::before,.swiper-cube .swiper-cube-shadow:before {
     content: ""
-}
-
-.swiper-button-lock {
-    display: none
 }
 
 .swiper-pagination {
@@ -659,10 +667,6 @@ button.swiper-pagination-bullet {
     top: 0
 }
 
-.swiper-pagination-lock {
-    display: none
-}
-
 .swiper-scrollbar {
     border-radius: 10px;
     position: relative;
@@ -702,10 +706,6 @@ button.swiper-pagination-bullet {
     top: 0
 }
 
-.swiper-scrollbar-lock {
-    display: none
-}
-
 .swiper-zoom-container {
     width: 100%;
     height: 100%;
@@ -733,6 +733,7 @@ button.swiper-pagination-bullet {
     z-index: 10;
     -webkit-transform-origin: 50%;
     transform-origin: 50%;
+    box-sizing: border-box;
     border: 4px solid;
     border-radius: 50%;
     border-top-color: transparent
@@ -840,6 +841,10 @@ button.swiper-pagination-bullet {
     visibility: visible
 }
 
+.app__image--decor,.decor-img,.faq__decor,.reviews__decor,.reviews__slide--body::before,.swiper-flip .swiper-slide,.swiper-flip .swiper-slide .swiper-slide {
+    pointer-events: none
+}
+
 .swiper-cube .swiper-slide-shadow-bottom,.swiper-cube .swiper-slide-shadow-left,.swiper-cube .swiper-slide-shadow-right,.swiper-cube .swiper-slide-shadow-top {
     z-index: 0;
     -webkit-backface-visibility: hidden;
@@ -868,14 +873,9 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-flip .swiper-slide {
-    pointer-events: none;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     z-index: 1
-}
-
-.swiper-flip .swiper-slide .swiper-slide {
-    pointer-events: none
 }
 
 .swiper-flip .swiper-slide-active,.swiper-flip .swiper-slide-active .swiper-slide-active {
@@ -930,8 +930,7 @@ button.swiper-pagination-bullet {
 }
 
 body,html {
-    font-size: 16px;
-    min-height: 100%
+    font-size: 16px
 }
 
 body {
@@ -948,10 +947,6 @@ body._active,body._popup-active {
     position: fixed;
     left: 0;
     top: 0
-}
-
-.wrapper {
-    min-height: 100%
 }
 
 .main {
@@ -985,6 +980,11 @@ section {
     position: relative
 }
 
+.header__lang--list,.header__nav {
+    position: absolute;
+    background: var(--white)
+}
+
 .bg-img {
     position: absolute;
     left: 0;
@@ -993,16 +993,10 @@ section {
     height: 100%;
     -webkit-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     -o-object-fit: cover;
     object-fit: cover;
     z-index: -1
-}
-
-.decor-img,.reviews__decor--img {
-    -webkit-user-select: none;
-    -moz-user-select: none
 }
 
 .btn {
@@ -1033,8 +1027,8 @@ section {
 }
 
 .decor-img {
-    pointer-events: none;
-    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
     user-select: none
 }
 
@@ -1081,11 +1075,6 @@ section {
     padding-top: 10px
 }
 
-.header,.header__lang--list {
-    padding: 5px 0;
-    background: var(--white)
-}
-
 .title._light {
     color: var(--white)
 }
@@ -1109,6 +1098,8 @@ section {
     left: 0;
     top: 0;
     width: 100%;
+    padding: 5px 0;
+    background: var(--white);
     border-bottom: 3px solid var(--light);
     z-index: 99
 }
@@ -1163,15 +1154,20 @@ section {
 }
 
 .header__lang--list {
-    position: absolute;
     right: 0;
     top: 100%;
     width: calc(100% + 30px);
     box-shadow: 0 5px 15px -5px rgba(0,0,0,.2);
     border-radius: 8px;
+    padding: 5px 0;
     transition: opacity .2s ease-in-out,visibility .2s ease-in-out;
     opacity: 0;
     visibility: hidden
+}
+
+.advantages__item--body,.reviews__slide--body {
+    box-shadow: 0 2.16px 60px rgba(129,129,129,.1);
+    min-height: 100%
 }
 
 .header__btn,.header__lang--list>li>a {
@@ -1209,6 +1205,11 @@ section {
     background: var(--light-2)
 }
 
+.header__btn,.header__burger {
+    background: var(--accent);
+    border-radius: 6px
+}
+
 .header__lang--list>li>a img {
     margin-right: 5px
 }
@@ -1228,12 +1229,10 @@ section {
     display: inline-block;
     text-align: center;
     padding: 10px 15px;
-    background: var(--accent);
     color: var(--white);
     font-weight: 500;
     font-size: .875rem;
-    margin-right: 15px;
-    border-radius: 6px
+    margin-right: 15px
 }
 
 .header__nav--btn,.header__nav--lang {
@@ -1250,12 +1249,10 @@ section {
 }
 
 .header__nav {
-    position: absolute;
     left: 0;
     top: 0;
     width: 100%;
-    height: 100vh;
-    background: var(--white);
+    height: var(--height-screen,100vh);
     overflow: auto;
     opacity: 0;
     visibility: hidden;
@@ -1340,13 +1337,11 @@ section {
     position: relative;
     width: 35px;
     height: 35px;
-    background: var(--accent);
     overflow: hidden;
     z-index: 10;
     cursor: pointer;
     display: inline-block;
-    transition: background .2s ease-in-out;
-    border-radius: 6px
+    transition: background .2s ease-in-out
 }
 
 .app__decor,.app__decor--element,.app__decor--min-element {
@@ -1406,7 +1401,17 @@ section {
     padding: 40px 0
 }
 
+.app__decor--element._bottom img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: auto
+}
+
 .app__decor--element img {
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 150px;
     height: auto
 }
@@ -1426,8 +1431,16 @@ section {
 }
 
 .app__decor--min-img {
+    position: absolute;
+    left: 0;
+    top: 50%;
     width: 75px;
     height: 69px
+}
+
+.app__decor--min-element._2 .app__decor--min-img {
+    left: 5%;
+    top: -5%
 }
 
 .app__container {
@@ -1543,82 +1556,68 @@ section {
     top: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
     z-index: 2
 }
 
 .app__image--min-element {
-    position: absolute
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
 }
 
 .app__image--min-element img {
+    position: absolute;
     height: auto
 }
 
-.app__image--min-element._1 {
+.app__image--min-element._1 img {
+    width: 112px;
     left: 0;
     top: 50%;
     -webkit-transform: translate(-115%,0);
     transform: translate(-115%,0)
 }
 
-.app__image--min-element._1 img {
-    width: 112px
-}
-
-.app__image--min-element._2 {
+.app__image--min-element._2 img {
+    width: 106px;
     right: 0;
     top: 0;
     -webkit-transform: translate(45%,20%);
     transform: translate(45%,20%)
 }
 
-.app__image--min-element._2 img {
-    width: 106px
-}
-
-.app__image--min-element._3 {
+.app__image--min-element._3 img {
+    width: 150px;
     left: 50%;
     top: 50%;
     -webkit-transform: translate(15%,15%);
     transform: translate(15%,15%)
 }
 
-.app__image--min-element._3 img {
-    width: 150px
-}
-
-.app__image--min-element._4 {
+.app__image--min-element._4 img {
+    width: 80px;
     left: 0;
     top: 0;
     -webkit-transform: translate(-100%,75%);
     transform: translate(-100%,75%)
 }
 
-.app__image--min-element._4 img {
-    width: 80px
-}
-
-.app__image--min-element._5 {
+.app__image--min-element._5 img {
+    width: 90px;
     right: 0;
     top: 50%;
     -webkit-transform: translate(150%,0);
     transform: translate(150%,0)
 }
 
-.app__image--min-element._5 img {
-    width: 90px
-}
-
-.app__image--min-element._6 {
+.app__image--min-element._6 img {
+    width: 116px;
     left: 75%;
     bottom: 0;
     -webkit-transform: translate(0,70%);
     transform: translate(0,70%)
-}
-
-.app__image--min-element._6 img {
-    width: 116px
 }
 
 .app__image picture:nth-child(2) {
@@ -1675,14 +1674,12 @@ section {
 }
 
 .advantages__item--body {
-    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 30px 20px;
     background: var(--white);
-    box-shadow: 0 2.16px 60px rgba(129,129,129,.1);
     border-radius: 12px
 }
 
@@ -1745,6 +1742,20 @@ section {
 .how-to-use__item--body {
     width: 100%;
     min-height: 100%
+}
+
+.how-to-use__item--min-decor {
+    position: absolute;
+    left: 0;
+    top: auto!important;
+    bottom: 0;
+    width: 100%;
+    height: 42.804%
+}
+
+.how-to-use__item--min-decor .how-to-use__item--decor {
+    width: 60px;
+    height: 60px
 }
 
 .how-to-use__item--image {
@@ -1821,11 +1832,6 @@ section {
     height: 50px
 }
 
-.faq__decor,.reviews__decor {
-    width: 100%;
-    pointer-events: none
-}
-
 .how-to-use__item--title {
     font-weight: 700;
     font-size: 1.125rem;
@@ -1861,6 +1867,7 @@ section {
     position: absolute;
     left: 0;
     top: 0;
+    width: 100%;
     height: 100%
 }
 
@@ -1877,7 +1884,7 @@ section {
 
 .faq__decor--element:nth-child(2) {
     left: 0;
-    bottom: 0;
+    bottom: -35px;
     -webkit-transform: translate(-30%,0);
     transform: translate(-30%,0)
 }
@@ -1910,10 +1917,6 @@ section {
 
 .faq__item {
     padding: 7.5px 0
-}
-
-.faq__item--body {
-    box-shadow: 0 0 30px rgba(0,0,0,.15)
 }
 
 .faq__item--question {
@@ -1965,6 +1968,7 @@ section {
     position: absolute;
     left: 0;
     top: 0;
+    width: 100%;
     height: 100%;
     z-index: -1
 }
@@ -1974,6 +1978,8 @@ section {
 }
 
 .reviews__decor--img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     width: 200px;
@@ -2015,8 +2021,6 @@ section {
 
 .reviews__slide--body {
     padding: 15px;
-    min-height: 100%;
-    box-shadow: 0 2.16px 60px rgba(129,129,129,.1);
     display: flex;
     align-items: center;
     position: relative;
@@ -2028,7 +2032,6 @@ section {
     right: 15px;
     bottom: 15px;
     z-index: -1;
-    pointer-events: none;
     width: 75px;
     height: 75px;
     background: url("data:image/svg+xml,%3Csvg viewBox='0 0 133 118' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.1'%3E%3Cpath d='M53.4313 23.2864C56.7574 21.8916 58.1522 17.9218 56.6501 14.7031L51.3928 3.65202C49.8907 0.541632 46.2428 -0.854235 43.024 0.541632C33.9042 4.40414 26.0719 9.44685 19.849 15.5625C12.2313 22.75 7.08126 31.0114 4.29167 40.1312C1.50209 49.3594 0 61.9115 0 77.898V110.837C0 114.377 2.89688 117.274 6.43751 117.274H48.6032C52.1438 117.274 55.0407 114.377 55.0407 110.837V68.6709C55.0407 65.1292 52.1438 62.2334 48.6032 62.2334H28.4323C28.6469 51.3958 31.2219 42.7062 35.9428 36.1604C39.8053 30.9052 45.599 26.6135 53.4313 23.2864Z' fill='%237D33BA'/%3E%3Cpath d='M129.179 23.2866C132.505 21.8918 133.899 17.922 132.398 14.7032L127.141 3.76052C125.639 0.649062 121.991 -0.745731 118.772 0.649062C109.759 4.51157 102.033 9.55428 95.7042 15.5626C88.0854 22.8585 82.8292 31.1199 80.0385 40.2397C77.2489 49.2512 75.8552 61.8054 75.8552 77.8992V110.838C75.8552 114.378 78.7521 117.275 82.2927 117.275H124.458C127.999 117.275 130.896 114.378 130.896 110.838V68.6721C130.896 65.1304 127.999 62.2346 124.458 62.2346H104.18C104.395 51.397 106.971 42.7075 111.691 36.1616C115.553 30.9054 121.347 26.6137 129.179 23.2866Z' fill='%237D33BA'/%3E%3C/g%3E%3C/svg%3E%0A") center/contain no-repeat
@@ -2630,7 +2633,13 @@ section {
     }
 
     .how-to-use__decor {
-        display: block
+        display: block;
+        pointer-events: none
+    }
+
+    .how-to-use__item--min-decor .how-to-use__item--decor {
+        width: 90px;
+        height: 90px
     }
 
     .how-to-use__item--info {
@@ -2762,12 +2771,12 @@ section {
         left: 0;
         top: 0;
         -webkit-transform: translate(-50%,0);
-        transform: translate(-50%,0)
+        transform: translate(-50%,0);
+        width: 100%;
+        height: 100%
     }
 
     .app__decor--element._bottom {
-        top: auto;
-        bottom: 0;
         -webkit-transform: translate(0,0);
         transform: translate(0,0)
     }
@@ -2776,7 +2785,9 @@ section {
         display: block;
         position: absolute;
         left: 1%;
-        top: 50%
+        top: 50%;
+        width: 100%;
+        height: 100%
     }
 
     .app__decor--min-element._2 {

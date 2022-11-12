@@ -93,7 +93,6 @@ body.addEventListener('click', function (event) {
     event.preventDefault();
     let section;
 
-    //section = document.querySelector()
     if(btnToScroll.getAttribute('href').length <= 1) {
       section = 0
     } else {
@@ -294,6 +293,23 @@ let reviewsCustomersSlider = new Swiper('.reviews-customers__slider', {
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
+function resize() {
+
+  html.style.setProperty('--height-screen', window.innerHeight + 'px')
+
+}
+
+resize();
+
+window.onresize = resize;
+
+/* var scene = document.getElementById('scene');
+var parallaxInstance = new Parallax(scene); */
+document.querySelectorAll('.parallax').forEach(parallax => {
+  new Parallax(parallax, {
+    gyroscope: true,
+  });
+})
 
 /* 
 // =-=-=-=-=-=-=-=-=-=-=-=- <Анимации> -=-=-=-=-=-=-=-=-=-=-=-=

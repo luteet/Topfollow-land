@@ -9,8 +9,8 @@
                 <div class="app__decor--large-element">
                     <img src="img/app/bg.svg" class="decor-img" width="0" height="0" loading="lazy" alt="">
                 </div>
-                <div class="app__decor--min-element">
-                    <picture>
+                <div class="app__decor--min-element parallax">
+                    <picture data-depth="0.05">
                         <source srcset="img/app/decor-min-1.webp" type="image/webp">
                         <img src="img/app/decor-min-1.png" alt="" width="0" height="0" loading="lazy" class="app__decor--min-img decor-img">
                     </picture>
@@ -89,17 +89,23 @@
                     </div>
                 </div>
                 <div class="app__image">
-                    <div class="app__image--decor">
-                        <div class="app__image--min-element _5">
+                    <div class="app__image--decor parallax">
+                        <div class="app__image--min-element _5" data-depth="0.15">
                             <picture>
                                 <source srcset="img/app/decor-min-5.webp" type="image/webp">
                                 <img src="img/app/decor-min-5.png" alt="" width="0" height="0" loading="lazy" class="app__image--min-img">
                             </picture>
                         </div>
-                        <div class="app__image--min-element _6">
+                        <div class="app__image--min-element _6" data-depth="0.13">
                             <picture>
                                 <source srcset="img/app/decor-min-7.webp" type="image/webp">
                                 <img src="img/app/decor-min-7.png" alt="" width="0" height="0" loading="lazy" class="app__image--min-img">
+                            </picture>
+                        </div>
+                        <div class="app__image--min-element _4" data-depth="0.08">
+                            <picture>
+                                <source srcset="img/app/decor-min-3.webp" type="image/webp">
+                                <img src="img/app/decor-min-3.png" alt="" width="0" height="0" loading="lazy" class="app__image--min-img">
                             </picture>
                         </div>
                     </div>
@@ -111,29 +117,23 @@
                         <source srcset="img/app/image-2.webp" type="image/webp">
                         <img src="img/app/image-2.png" alt="" loading="lazy" width="236" height="495" class="app__image--img _2">
                     </picture>
-                    <div class="app__image--decor">
-                        <div class="app__image--min-element _1">
+                    <div class="app__image--decor parallax">
+                        <div class="app__image--min-element _1" data-depth="0.41">
                             <picture>
                                 <source srcset="img/app/decor-min-2.webp" type="image/webp">
                                 <img src="img/app/decor-min-2.png" alt="" width="0" height="0" loading="lazy" class="app__image--min-img">
                             </picture>
                         </div>
-                        <div class="app__image--min-element _2">
+                        <div class="app__image--min-element _2" data-depth="0.34">
                             <picture>
                                 <source srcset="img/app/decor-min-4.webp" type="image/webp">
                                 <img src="img/app/decor-min-4.png" alt="" width="0" height="0" loading="lazy" class="app__image--min-img">
                             </picture>
                         </div>
-                        <div class="app__image--min-element _3">
+                        <div class="app__image--min-element _3" data-depth="0.86">
                             <picture>
                                 <source srcset="img/app/decor-min-6.webp" type="image/webp">
                                 <img src="img/app/decor-min-6.png" alt="" width="0" height="0" loading="lazy" class="app__image--min-img">
-                            </picture>
-                        </div>
-                        <div class="app__image--min-element _4">
-                            <picture>
-                                <source srcset="img/app/decor-min-3.webp" type="image/webp">
-                                <img src="img/app/decor-min-3.png" alt="" width="0" height="0" loading="lazy" class="app__image--min-img">
                             </picture>
                         </div>
                     </div>
@@ -189,16 +189,16 @@
                 </ul>
             </div>
         </section>
-        <section class="how-to-use">
+        <section class="how-to-use" id="how-to-use">
             <div class="how-to-use__decor">
-                <div class="how-to-use__decor--element">
-                    <picture>
+                <div class="how-to-use__decor--element parallax">
+                    <picture data-depth="3">
                         <source srcset="img/how-to-use/decor-1.webp" type="image/webp">
                         <img src="img/how-to-use/decor-1.png" alt="" width="116" height="107" loading="lazy" class="how-to-use__decor--img decor-img">
                     </picture>
                 </div>
-                <div class="how-to-use__decor--element">
-                    <picture>
+                <div class="how-to-use__decor--element parallax">
+                    <picture  data-depth="1">
                         <source srcset="img/how-to-use/decor-2.webp" type="image/webp">
                         <img src="img/how-to-use/decor-2.png" alt="" width="120" height="116" loading="lazy" class="how-to-use__decor--img decor-img">
                     </picture>
@@ -229,7 +229,7 @@
                             "image": '3',
                             "title": 'Earn Coins',
                             "text": 'Make task and earn coins',
-                            "decor": '<picture><source srcset="img/how-to-use/decor-3.webp" type="image/webp"><img src="img/how-to-use/decor-3.png" alt="" width="90" height="90" loading="lazy" class="how-to-use__item--decor"></picture>',
+                            "decor": '<div class="how-to-use__item--min-decor parallax"><picture data-depth="0.25"><source srcset="img/how-to-use/decor-3.webp" type="image/webp"><img src="img/how-to-use/decor-3.png" alt="" width="90" height="90" loading="lazy" class="how-to-use__item--decor"></picture></div>',
                         },
                         {
                             "image": '4',
@@ -241,17 +241,17 @@
                 </ul>
             </div>
         </section>
-        <section class="faq">
+        <section class="faq" id="faq">
             <div class="faq__container container _large">
                 <div class="faq__decor">
-                    <div class="faq__decor--element">
-                        <picture>
+                    <div class="faq__decor--element parallax">
+                        <picture data-depth="2">
                             <source srcset="img/faq/decor-1.webp" type="image/webp">
                             <img src="img/faq/decor-1.png" alt="" width="99" height="91" loading="lazy" class="faq__decor--img decor-img">
                         </picture>
                     </div>
-                    <div class="faq__decor--element">
-                        <picture>
+                    <div class="faq__decor--element parallax">
+                        <picture data-depth="3.5">
                             <source srcset="img/faq/decor-2.webp" type="image/webp">
                             <img src="img/faq/decor-2.png" alt="" width="125" height="121" loading="lazy" class="faq__decor--img decor-img">
                         </picture>
@@ -282,7 +282,7 @@
                 </div>
             </div>
         </section>
-        <section class="reviews">
+        <section class="reviews" id="reviews">
             <div class="reviews__decor">
                 <div class="reviews__decor--element">
                     <img src="img/reviews/decor-1.svg" width="0" height="0" loading="lazy" alt="" class="reviews__decor--img">
@@ -408,7 +408,7 @@
                 </div>
             </div>
         </section>
-        <section class="app">
+        <section class="app" id="download">
             <div class="app__decor">
                 <div class="app__decor--element _bottom">
                     <img src="img/app/decor-2.svg" class="decor-img" width="0" height="0" loading="lazy" alt="">
@@ -416,8 +416,8 @@
                 <div class="app__decor--large-element">
                     <img src="img/app/bg-2.svg" class="decor-img" width="0" height="0" loading="lazy" alt="">
                 </div>
-                <div class="app__decor--min-element _2">
-                    <picture>
+                <div class="app__decor--min-element _2 parallax">
+                    <picture data-depth="0.05">
                         <source srcset="img/app/decor-min-8.webp" type="image/webp">
                         <img src="img/app/decor-min-8.png" alt="" width="0" height="0" loading="lazy" class="app__decor--min-img decor-img">
                     </picture>
@@ -500,17 +500,23 @@
                     </div>
                 </div>
                 <div class="app__image">
-                    <div class="app__image--decor">
-                        <div class="app__image--min-element _5">
+                    <div class="app__image--decor parallax">
+                        <div class="app__image--min-element _5" data-depth="0.15">
                             <picture>
                                 <source srcset="img/app/decor-min-5.webp" type="image/webp">
                                 <img src="img/app/decor-min-5.png" alt="" width="0" height="0" loading="lazy" class="app__image--min-img">
                             </picture>
                         </div>
-                        <div class="app__image--min-element _6">
+                        <div class="app__image--min-element _6" data-depth="0.13">
                             <picture>
                                 <source srcset="img/app/decor-min-7.webp" type="image/webp">
                                 <img src="img/app/decor-min-7.png" alt="" width="0" height="0" loading="lazy" class="app__image--min-img">
+                            </picture>
+                        </div>
+                        <div class="app__image--min-element _4" data-depth="0.08">
+                            <picture>
+                                <source srcset="img/app/decor-min-3.webp" type="image/webp">
+                                <img src="img/app/decor-min-3.png" alt="" width="0" height="0" loading="lazy" class="app__image--min-img">
                             </picture>
                         </div>
                     </div>
@@ -522,29 +528,23 @@
                         <source srcset="img/app/image-2.webp" type="image/webp">
                         <img src="img/app/image-2.png" alt="" loading="lazy" width="236" height="495" class="app__image--img _2">
                     </picture>
-                    <div class="app__image--decor">
-                        <div class="app__image--min-element _1">
+                    <div class="app__image--decor parallax">
+                        <div class="app__image--min-element _1" data-depth="0.41">
                             <picture>
                                 <source srcset="img/app/decor-min-2.webp" type="image/webp">
                                 <img src="img/app/decor-min-2.png" alt="" width="0" height="0" loading="lazy" class="app__image--min-img">
                             </picture>
                         </div>
-                        <div class="app__image--min-element _2">
+                        <div class="app__image--min-element _2" data-depth="0.34">
                             <picture>
                                 <source srcset="img/app/decor-min-4.webp" type="image/webp">
                                 <img src="img/app/decor-min-4.png" alt="" width="0" height="0" loading="lazy" class="app__image--min-img">
                             </picture>
                         </div>
-                        <div class="app__image--min-element _3">
+                        <div class="app__image--min-element _3" data-depth="0.86">
                             <picture>
                                 <source srcset="img/app/decor-min-6.webp" type="image/webp">
                                 <img src="img/app/decor-min-6.png" alt="" width="0" height="0" loading="lazy" class="app__image--min-img">
-                            </picture>
-                        </div>
-                        <div class="app__image--min-element _4">
-                            <picture>
-                                <source srcset="img/app/decor-min-3.webp" type="image/webp">
-                                <img src="img/app/decor-min-3.png" alt="" width="0" height="0" loading="lazy" class="app__image--min-img">
                             </picture>
                         </div>
                     </div>
