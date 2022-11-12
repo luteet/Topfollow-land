@@ -88,7 +88,7 @@ body.addEventListener('click', function (event) {
 
   // =-=-=-=-=-=-=-=-=-=- <scroll to section> -=-=-=-=-=-=-=-=-=-=-
 
-  let btnToScroll = $('.btn-scroll-wrapper a');
+  let btnToScroll = $('.btn-to-scroll');
   if(btnToScroll) {
     event.preventDefault();
     let section;
@@ -103,9 +103,11 @@ body.addEventListener('click', function (event) {
       elem.classList.remove('_active')
     })
 
+    
+
     window.scroll({
       left: 0,
-      top: section,
+      top: (section <= 100) ? section - header.offsetHeight : section, // - header.offsetHeight,
       behavior: 'smooth'
     })
 
