@@ -18,10 +18,6 @@ progress,sub,sup {
     list-style: none
 }
 
-.bg-img,.decor-img {
-    -ms-user-select: none
-}
-
 * {
     padding: 0;
     margin: 0;
@@ -257,7 +253,7 @@ summary {
     box-sizing: content-box
 }
 
-.swiper-button-lock,.swiper-pagination-lock,.swiper-scrollbar-lock {
+.swiper-button-lock,.swiper-pagination-lock {
     display: none
 }
 
@@ -382,10 +378,6 @@ summary {
     height: 100%;
     min-height: 1px;
     width: var(--swiper-centered-offset-after)
-}
-
-.wrapper,body,html {
-    min-height: 100%
 }
 
 .swiper-centered.swiper-vertical>.swiper-wrapper>.swiper-slide:first-child {
@@ -706,6 +698,10 @@ button.swiper-pagination-bullet {
     top: 0
 }
 
+.swiper-scrollbar-lock {
+    display: none
+}
+
 .swiper-zoom-container {
     width: 100%;
     height: 100%;
@@ -841,10 +837,6 @@ button.swiper-pagination-bullet {
     visibility: visible
 }
 
-.app__image--decor,.decor-img,.faq__decor,.reviews__decor,.reviews__slide--body::before,.swiper-flip .swiper-slide,.swiper-flip .swiper-slide .swiper-slide {
-    pointer-events: none
-}
-
 .swiper-cube .swiper-slide-shadow-bottom,.swiper-cube .swiper-slide-shadow-left,.swiper-cube .swiper-slide-shadow-right,.swiper-cube .swiper-slide-shadow-top {
     z-index: 0;
     -webkit-backface-visibility: hidden;
@@ -873,9 +865,14 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-flip .swiper-slide {
+    pointer-events: none;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     z-index: 1
+}
+
+.swiper-flip .swiper-slide .swiper-slide {
+    pointer-events: none
 }
 
 .swiper-flip .swiper-slide-active,.swiper-flip .swiper-slide-active .swiper-slide-active {
@@ -930,7 +927,8 @@ button.swiper-pagination-bullet {
 }
 
 body,html {
-    font-size: 16px
+    font-size: 16px;
+    min-height: 100%
 }
 
 body {
@@ -947,6 +945,10 @@ body._active,body._popup-active {
     position: fixed;
     left: 0;
     top: 0
+}
+
+.wrapper {
+    min-height: 100%
 }
 
 .main {
@@ -993,6 +995,7 @@ section {
     height: 100%;
     -webkit-user-select: none;
     -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     -o-object-fit: cover;
     object-fit: cover;
@@ -1027,8 +1030,10 @@ section {
 }
 
 .decor-img {
+    pointer-events: none;
     -webkit-user-select: none;
     -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none
 }
 
@@ -1441,7 +1446,7 @@ section {
 
 .app__decor--min-element._2 .app__decor--min-img {
     left: 5%;
-    top: -5%
+    top: 105%
 }
 
 .app__container {
@@ -1557,6 +1562,7 @@ section {
     top: 0;
     width: 100%;
     height: 100%;
+    pointer-events: none;
     z-index: 2
 }
 
@@ -1684,11 +1690,6 @@ section {
     border-radius: 12px
 }
 
-.faq__body,.how-to-use__item--image::before {
-    background: linear-gradient(231.08deg,#7D33BA 0,#ED017F 132.87%);
-    border-radius: 20px
-}
-
 .advantages__item--title {
     padding-top: 10px;
     font-weight: 700;
@@ -1748,7 +1749,7 @@ section {
 .how-to-use__item--min-decor {
     position: absolute;
     left: 0;
-    top: auto!important;
+    top: 30%;
     bottom: 0;
     width: 100%;
     height: 42.804%
@@ -1770,7 +1771,9 @@ section {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 42.804%
+    height: 42.804%;
+    background: linear-gradient(231.08deg,#7D33BA 0,#ED017F 132.87%);
+    border-radius: 20px
 }
 
 .how-to-use__item--picture {
@@ -1833,6 +1836,11 @@ section {
     height: 50px
 }
 
+.faq__decor,.reviews__decor {
+    width: 100%;
+    pointer-events: none
+}
+
 .how-to-use__item--title {
     font-weight: 700;
     font-size: 1.125rem;
@@ -1856,6 +1864,8 @@ section {
 }
 
 .faq__body {
+    background: linear-gradient(231.08deg,#7D33BA 0,#ED017F 132.87%);
+    border-radius: 20px;
     padding: 30px 0 50px
 }
 
@@ -1868,26 +1878,23 @@ section {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
     height: 100%
 }
 
 .faq__decor--element {
-    position: absolute
+    position: absolute;
+    width: 100px;
+    height: 100px
 }
 
 .faq__decor--element:nth-child(1) {
-    right: 0;
-    top: 15px;
-    -webkit-transform: translate(30%,0);
-    transform: translate(30%,0)
+    right: -25px;
+    top: 15px
 }
 
 .faq__decor--element:nth-child(2) {
-    left: 0;
-    bottom: -35px;
-    -webkit-transform: translate(-30%,0);
-    transform: translate(-30%,0)
+    left: -25px;
+    bottom: 15px
 }
 
 .faq__decor--img {
@@ -1969,7 +1976,6 @@ section {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
     height: 100%;
     z-index: -1
 }
@@ -2033,6 +2039,7 @@ section {
     right: 15px;
     bottom: 15px;
     z-index: -1;
+    pointer-events: none;
     width: 75px;
     height: 75px;
     background: url("data:image/svg+xml,%3Csvg viewBox='0 0 133 118' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.1'%3E%3Cpath d='M53.4313 23.2864C56.7574 21.8916 58.1522 17.9218 56.6501 14.7031L51.3928 3.65202C49.8907 0.541632 46.2428 -0.854235 43.024 0.541632C33.9042 4.40414 26.0719 9.44685 19.849 15.5625C12.2313 22.75 7.08126 31.0114 4.29167 40.1312C1.50209 49.3594 0 61.9115 0 77.898V110.837C0 114.377 2.89688 117.274 6.43751 117.274H48.6032C52.1438 117.274 55.0407 114.377 55.0407 110.837V68.6709C55.0407 65.1292 52.1438 62.2334 48.6032 62.2334H28.4323C28.6469 51.3958 31.2219 42.7062 35.9428 36.1604C39.8053 30.9052 45.599 26.6135 53.4313 23.2864Z' fill='%237D33BA'/%3E%3Cpath d='M129.179 23.2866C132.505 21.8918 133.899 17.922 132.398 14.7032L127.141 3.76052C125.639 0.649062 121.991 -0.745731 118.772 0.649062C109.759 4.51157 102.033 9.55428 95.7042 15.5626C88.0854 22.8585 82.8292 31.1199 80.0385 40.2397C77.2489 49.2512 75.8552 61.8054 75.8552 77.8992V110.838C75.8552 114.378 78.7521 117.275 82.2927 117.275H124.458C127.999 117.275 130.896 114.378 130.896 110.838V68.6721C130.896 65.1304 127.999 62.2346 124.458 62.2346H104.18C104.395 51.397 106.971 42.7075 111.691 36.1616C115.553 30.9054 121.347 26.6137 129.179 23.2866Z' fill='%237D33BA'/%3E%3C/g%3E%3C/svg%3E%0A") center/contain no-repeat
@@ -2443,7 +2450,7 @@ section {
     }
 
     .faq__decor--element:nth-child(1) {
-        top: 35px
+        top: 15px
     }
 
     .faq__decor--element:nth-child(2) {
@@ -2767,15 +2774,18 @@ section {
 }
 
 @media (min-width:1350px) {
-    .app__decor--element {
+    .app__decor--element,.app__decor--min-element {
+        width: 100%;
+        height: 100%;
         display: block;
-        position: absolute;
+        position: absolute
+    }
+
+    .app__decor--element {
         left: 0;
         top: 0;
         -webkit-transform: translate(-50%,0);
-        transform: translate(-50%,0);
-        width: 100%;
-        height: 100%
+        transform: translate(-50%,0)
     }
 
     .app__decor--element._bottom {
@@ -2784,12 +2794,8 @@ section {
     }
 
     .app__decor--min-element {
-        display: block;
-        position: absolute;
         left: 1%;
-        top: 50%;
-        width: 100%;
-        height: 100%
+        top: 0
     }
 
     .app__decor--min-element._2 {

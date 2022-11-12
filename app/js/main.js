@@ -107,7 +107,7 @@ body.addEventListener('click', function (event) {
 
     window.scroll({
       left: 0,
-      top: (section <= 100) ? section - header.offsetHeight : section, // - header.offsetHeight,
+      top: (section <= 100) ? section - header.offsetHeight : section,
       behavior: 'smooth'
     })
 
@@ -163,37 +163,9 @@ body.addEventListener('click', function (event) {
 
 })
 
-/* body.addEventListener("mouseover", function (event) {
-  function $(elem) {
-    return event.target.closest(elem);
-  }
 
-  const headerLang = $('.header__lang');
-  if(headerLang) {
-    if(!headerLang.classList.contains('_hover')) {
-      headerLang.classList.add('_hover')
-    }
-  }
 
-})
-
-body.addEventListener("mouseout", function (event) {
-  function $to(elem) {
-    return event.relatedTarget.closest(elem);
-  }
-
-  function $from(elem) {
-    return event.target.closest(elem);
-  }
-
-  const headerLang = $from('.header__lang');
-  if(headerLang) {
-    if(headerLang.classList.contains('_hover') && !event.relatedTarget.closest('.header__lang')) {
-      headerLang.classList.remove('_hover')
-    }
-  }
-
-}) */
+// =-=-=-=-=-=-=-=-=-=-=-=- <hover> -=-=-=-=-=-=-=-=-=-=-=-=
 
 function hover(hover, blur) {
   body.addEventListener("mouseover", function (event) {
@@ -240,7 +212,11 @@ hover(
       }
     }
 
-  })
+})
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </parallax> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -248,17 +224,12 @@ let reviewsSlider = new Swiper('.reviews__slider', {
   
     spaceBetween: 30,
     slidesPerView: 1,
-    /* centeredSlides: false,
 
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    }, */
     navigation: {
         nextEl: '#reviews-slider-arrow-next',
         prevEl: '#reviews-slider-arrow-prev',
     },
+
     breakpoints: {
       768: {
         slidesPerView: 2,
@@ -271,17 +242,12 @@ let reviewsCustomersSlider = new Swiper('.reviews-customers__slider', {
   spaceBetween: 15,
   slidesPerView: 1,
   loop: true,
-  /* centeredSlides: false,
-
-  loop: true,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  }, */
+  
   navigation: {
       nextEl: '#reviews-customers-slider-arrow-next',
       prevEl: '#reviews-customers-slider-arrow-prev',
   },
+
   breakpoints: {
     600: {
       slidesPerView: 2,
@@ -295,6 +261,10 @@ let reviewsCustomersSlider = new Swiper('.reviews-customers__slider', {
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
+
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <resize> -=-=-=-=-=-=-=-=-=-=-=-=
+
 function resize() {
 
   html.style.setProperty('--height-screen', window.innerHeight + 'px')
@@ -305,13 +275,20 @@ resize();
 
 window.onresize = resize;
 
-/* var scene = document.getElementById('scene');
-var parallaxInstance = new Parallax(scene); */
-document.querySelectorAll('.parallax').forEach(parallax => {
+// =-=-=-=-=-=-=-=-=-=-=-=- </resize> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <parallax> -=-=-=-=-=-=-=-=-=-=-=-=
+
+/* document.querySelectorAll('.parallax').forEach(parallax => {
   new Parallax(parallax, {
     gyroscope: true,
   });
-})
+}) */
+var rellax = new Rellax('.rellax');
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </parallax> -=-=-=-=-=-=-=-=-=-=-=-=
 
 /* 
 // =-=-=-=-=-=-=-=-=-=-=-=- <Анимации> -=-=-=-=-=-=-=-=-=-=-=-=

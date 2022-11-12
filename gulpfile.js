@@ -63,7 +63,7 @@ function scriptsLib() {
         //'node_modules/nouislider/dist/nouislider.min.js', // Кастомный input[range]
         //'node_modules/fslightbox/index.js', // Галерея
         'node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js', // Полифил для window.scroll()
-        'node_modules/parallax-js/dist/parallax.min.js', // Паралакс
+        'node_modules/rellax/rellax.min.js', // Паралакс
         //'node_modules/chart.js/dist/chart.min.js', // График
     ])
     .pipe(concat('libs.min.js'))
